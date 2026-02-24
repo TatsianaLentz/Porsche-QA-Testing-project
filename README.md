@@ -107,7 +107,7 @@
 
 ---
 
-## 🔬 QA Engineering Squad — Das Fahrerlager
+## 🏁 QA Pit Lane Engineers — Das Fahrerlager
 
 <div align="center">
 <table>
