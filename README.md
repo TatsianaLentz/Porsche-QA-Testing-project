@@ -2,6 +2,7 @@
 
 <div align="center">
 
+<img src="https://upforme.ru/uploads/0017/fe/78/5/234958.gif"/>
 
 **End-to-End Testing Framework for Porsche Platform**
 
