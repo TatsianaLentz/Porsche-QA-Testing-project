@@ -192,5 +192,3 @@ def check_contact_and_support_url(driver):
     except AssertionError:
         print("Test result: Page URL is different", driver.current_url)
 
-
-
