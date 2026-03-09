@@ -1,9 +1,8 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import random
 import time
-import requests
+
+
 def delay():
     time.sleep(random.randint(1, 3))
 
@@ -97,6 +96,103 @@ def contact_and_support_button(driver):
     shadow = host.shadow_root
     contact_and_support = shadow.find_element(By.CSS_SELECTOR,"a[class='pure-link sc-phn-nd-menu-item'][data-id='account/mainmenu.account.contact']")
     driver.execute_script("arguments[0].click();", contact_and_support)
+
+def find_your_porsche_center(driver):
+    host = driver.find_element(By.CSS_SELECTOR, "phn-header")
+    shadow = host.shadow_root
+    find_a_dealer = shadow.find_element(By.CSS_SELECTOR,
+                                        "phn-p-button-pure[class='sc-phn-nd-side-drawer-item hydrated'][data-id='find_a_dealer']")
+    driver.execute_script("arguments[0].click();", find_a_dealer)
+
+def zip_code1(driver):
+    host = driver.find_element(By.CSS_SELECTOR, "phn-header")
+    shadow = host.shadow_root
+    zip_code = shadow.find_element(By.CSS_SELECTOR,
+                                   ".autofocus.sc-phn-nd-autocomplete-search-geolocation-field.hydrated")
+    driver.execute_script("arguments[0].click();", zip_code)
+    zip_code.send_keys("!@#$%^&*()_+")
+
+def zip_code2(driver):
+    host = driver.find_element(By.CSS_SELECTOR, "phn-header")
+    shadow = host.shadow_root
+    zip_code = shadow.find_element(By.CSS_SELECTOR,
+                                   ".autofocus.sc-phn-nd-autocomplete-search-geolocation-field.hydrated")
+    driver.execute_script("arguments[0].click();", zip_code)
+    zip_code.send_keys("AsDFghjKL")
+
+def zip_code3(driver):
+    host = driver.find_element(By.CSS_SELECTOR, "phn-header")
+    shadow = host.shadow_root
+    zip_code = shadow.find_element(By.CSS_SELECTOR,
+                                   ".autofocus.sc-phn-nd-autocomplete-search-geolocation-field.hydrated")
+    driver.execute_script("arguments[0].click();", zip_code)
+    zip_code.send_keys("123456789")
+
+def career_button(driver):
+    host = driver.find_element(By.CSS_SELECTOR, ".pcom-main-footer.hydrated")
+    shadow = host.shadow_root
+    host2 = shadow.find_element(By.CSS_SELECTOR,
+                                "footer:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > pnav-further-links:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > pnav-footer-p-link-pure:nth-child(1)")
+    shadow2 = host2.shadow_root
+    career = shadow2.find_element(By.CSS_SELECTOR, ".root")
+    driver.execute_script("arguments[0].click();", career)
+
+def find_search_window1(driver):
+    search_window = driver.find_element(By.XPATH, "//input[@placeholder='Job title, location,..']")
+    driver.execute_script("arguments[0].click()", search_window)
+    search_window.send_keys("!@#$%^&*()_+")
+
+def find_search_window2(driver):
+    search_window = driver.find_element(By.XPATH, "//input[@placeholder='Job title, location,..']")
+    driver.execute_script("arguments[0].click()", search_window)
+    search_window.send_keys("AsDFghjKL")
+
+def find_search_window3(driver):
+    search_window = driver.find_element(By.XPATH, "//input[@placeholder='Job title, location,..']")
+    driver.execute_script("arguments[0].click()", search_window)
+    search_window.send_keys("123456789")
+
+def find_ask_search_window1(driver):
+    search_window = driver.find_element(By.XPATH, "//p-input-search[@placeholder='Search support topics']")
+    driver.execute_script("arguments[0].click()", search_window)
+    search_window.send_keys("!@#$%^&*()_+")
+
+def find_ask_search_window2(driver):
+    search_window = driver.find_element(By.XPATH, "//p-input-search[@placeholder='Search support topics']")
+    driver.execute_script("arguments[0].click()", search_window)
+    search_window.send_keys("AsDFghjKL")
+
+def find_ask_search_window3(driver):
+    search_window = driver.find_element(By.XPATH, "//p-input-search[@placeholder='Search support topics']")
+    driver.execute_script("arguments[0].click()", search_window)
+    search_window.send_keys("123456789")
+
+def find_owner_manual_button(driver):
+    host = driver.find_element(By.CSS_SELECTOR, "p-link[class='hydrated']")
+    shadow = host.shadow_root
+    owner_manual = shadow.find_element(By.CSS_SELECTOR, ".root")
+    driver.execute_script("arguments[0].click();", owner_manual)
+
+def find_vin_search_window_button1(driver):
+    host = driver.find_element(By.CSS_SELECTOR, "bod-web-plugin[hif-path='bodWpi2BodSpaHostInterface']")
+    shadow = host.shadow_root
+    vin_number = shadow.find_element(By.CSS_SELECTOR, "#vin-input-field")
+    driver.execute_script("arguments[0].click()", vin_number)
+    vin_number.send_keys("A12345H6789QWE001")
+
+def find_vin_search_window_button2(driver):
+    host = driver.find_element(By.CSS_SELECTOR, "bod-web-plugin[hif-path='bodWpi2BodSpaHostInterface']")
+    shadow = host.shadow_root
+    vin_number = shadow.find_element(By.CSS_SELECTOR, "#vin-input-field")
+    driver.execute_script("arguments[0].click()", vin_number)
+    vin_number.send_keys("!@#$%^&*()_+{}-=+")
+
+def find_vin_search_window_button3(driver):
+    host = driver.find_element(By.CSS_SELECTOR, "bod-web-plugin[hif-path='bodWpi2BodSpaHostInterface']")
+    shadow = host.shadow_root
+    vin_number = shadow.find_element(By.CSS_SELECTOR, "#vin-input-field")
+    driver.execute_script("arguments[0].click()", vin_number)
+    vin_number.send_keys("12345678912345678")
 
 
 
@@ -192,3 +288,37 @@ def check_contact_and_support_url(driver):
     except AssertionError:
         print("Test result: Page URL is different", driver.current_url)
 
+def check_job_porsche_url(driver):
+    try:
+        assert "https://www.porsche.com/usa/aboutporsche/jobs/" in driver.current_url
+        print("Test result: Page URL is: ", driver.current_url)
+    except AssertionError:
+        print("Test result: Page URL is different", driver.current_url)
+
+def check_ask_porsche_url(driver):
+    try:
+        assert "https://ask.porsche.com/us/en-US" in driver.current_url
+        print("Test result: Page URL is: ", driver.current_url)
+    except AssertionError:
+        print("Test result: Page URL is different", driver.current_url)
+
+def check_result_ask_porsche_url1(driver):
+    try:
+        assert "https://ask.porsche.com/us/en-US/search/?q=!%40%23%24%25%5E%26*()_%2B" in driver.current_url
+        print("Test result: Page URL is: ", driver.current_url)
+    except AssertionError:
+        print("Test result: Page URL is different", driver.current_url)
+
+def check_result_ask_porsche_url2(driver):
+    try:
+        assert "https://ask.porsche.com/us/en-US/search/?q=AsDFghjKL" in driver.current_url
+        print("Test result: Page URL is: ", driver.current_url)
+    except AssertionError:
+        print("Test result: Page URL is different", driver.current_url)
+
+def check_result_ask_porsche_url3(driver):
+    try:
+        assert "https://ask.porsche.com/us/en-US/search/?q=123456789" in driver.current_url
+        print("Test result: Page URL is: ", driver.current_url)
+    except AssertionError:
+        print("Test result: Page URL is different", driver.current_url)
